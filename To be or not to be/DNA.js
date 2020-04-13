@@ -4,7 +4,7 @@
  * @todo should replace the this function more generic way.
  */
 function randomChar() {
-  var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  var characters = "abcdefghijklmnopqrstuvwxyz ";
   let index = Math.floor(Math.random() * characters.length);
   return characters.charAt(index);
 }
@@ -30,6 +30,10 @@ class DNA {
     }
     this.fitness = score / text.length;
   }
+
+  getPhrase() {
+    return this.genes.join("");
+  }
   /**
    *
    * @param {DNA} partner DNA to be mixed with current DNA
@@ -40,11 +44,12 @@ class DNA {
     let midPoint = Math.floor(this.genes.length / 2);
     for (let i = 0; i < this.genes.length; i++) {
       if (i < midPoint) {
-        child[i] = partner.genes[i];
+        child.genes[i] = partner.genes[i];
       } else {
-        child[i] = this.genes[i];
+        child.genes[i] = this.genes[i];
       }
     }
+    return child;
   }
   /**
    *
