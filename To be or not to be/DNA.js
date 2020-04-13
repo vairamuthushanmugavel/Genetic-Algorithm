@@ -12,6 +12,7 @@ function randomChar() {
 class DNA {
   constructor(length) {
     this.genes = [];
+    this.fitness = 0;
     for (let i = 0; i < length; i++) {
       this.genes[i] = randomChar();
     }
@@ -27,7 +28,7 @@ class DNA {
         score++;
       }
     }
-    return score / text.length;
+    this.fitness = score / text.length;
   }
   /**
    *

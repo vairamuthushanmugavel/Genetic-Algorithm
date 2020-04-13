@@ -13,4 +13,4 @@ function displayInfo() {
   mutratioNode.textContent = mutationRation * 100 + "%";
   populationNode.textContent = population;
 }
-displayInfo();
+// displayInfo();
